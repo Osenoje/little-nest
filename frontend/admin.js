@@ -58,7 +58,7 @@ loginForm.addEventListener("submit", async (event) => {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/admin/login",
+            `${API_BASE_URL}/api/admin/login`,
             {
                 method: "POST",
 
@@ -190,7 +190,7 @@ saveProductBtn.addEventListener("click", async () => {
         try {
 
             const response = await fetch(
-                `http://localhost:5000/api/products/${editingProductId}`,
+                `${API_BASE_URL}/api/products/${editingProductId}`,
                 {
                     method: "PUT",
 
@@ -264,7 +264,7 @@ saveProductBtn.addEventListener("click", async () => {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/products",
+            `${API_BASE_URL}/api/products`,
             {
                 method: "POST",
 
@@ -294,7 +294,7 @@ saveProductBtn.addEventListener("click", async () => {
             price: data.product.price,
             category: data.product.category,
             image:
-                `http://localhost:5000${data.product.image_url}`
+                `${API_BASE_URL}${data.product.image_url}`
         });
 
         productName.value = "";
@@ -405,7 +405,7 @@ function displayAdminProduct(product) {
         try {
 
             const response = await fetch(
-                `http://localhost:5000/api/products/${product.id}`,
+                `${API_BASE_URL}/api/products/${product.id}`,
                 {
                     method: "DELETE",
 
@@ -469,7 +469,7 @@ async function loadProducts() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/products"
+            `${API_BASE_URL}/api/products`
         );
 
         const products = await response.json();
@@ -483,7 +483,7 @@ async function loadProducts() {
                 name: product.name,
                 price: product.price,
                 category: product.category,
-                image: `http://localhost:5000${product.image_url}`
+                image: `${API_BASE_URL}${product.image_url}`
             });
 
         });
@@ -583,7 +583,7 @@ changePasswordForm.addEventListener("submit", async (event) => {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/admin/change-password",
+            `${API_BASE_URL}/api/admin/change-password`,
             {
                 method: "PUT",
 

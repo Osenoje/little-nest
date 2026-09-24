@@ -24,7 +24,7 @@ const formatPrice = (price) => new Intl.NumberFormat("en-NG", {
 
 async function loadProducts() {
     try {
-        const response = await fetch("http://localhost:5000/api/products");
+        const response = await fetch(`${API_BASE_URL}/api/products`);
 
         console.log("Response status:", response.status);
 
@@ -41,7 +41,7 @@ async function loadProducts() {
             name: product.name,
             price: Number(product.price),
             category: product.category,
-            image: `http://localhost:5000${product.image_url}`
+            image: `${API_BASE_URL}${product.image_url}`
         }));
 
         console.log("Products loaded:", products);

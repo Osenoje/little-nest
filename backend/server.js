@@ -13,7 +13,8 @@ require("dotenv").config();
 
 const app = express();
 
-const PORT = 5000;
+// Render supplies PORT at runtime. Keep 5000 for local development.
+const PORT = process.env.PORT || 5000;
 
 
 // =========================
