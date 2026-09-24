@@ -1,0 +1,681 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fdf6f7;
+    color: #333;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.admin-page {
+    min-height: 100vh;
+    padding: 30px;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+.admin-login {
+    width: 100%;
+    max-width: 420px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+}
+
+.admin-login h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.admin-subtitle {
+    text-align: center;
+    color: #999;
+    margin-bottom: 30px;
+}
+
+
+/* INPUTS */
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+.input-group input:focus {
+    border-color: #d9829a;
+}
+
+
+/* LOGIN BUTTON */
+
+.login-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #d9829a;
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    opacity: 0.9;
+}
+
+
+/* MESSAGE */
+
+#admin-login-message {
+    text-align: center;
+
+    margin-top: 15px;
+
+    font-size: 14px;
+}
+
+
+/* BACK */
+
+.back-to-store {
+    display: block;
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #777;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+.back-to-store:hover {
+    color: #d9829a;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.admin-dashboard {
+    display: none;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+/* HEADER */
+
+.dashboard-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    background: white;
+
+    padding: 20px 25px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    margin-bottom: 3px;
+}
+
+.dashboard-header p {
+    color: #999;
+}
+
+
+/* LOGOUT */
+
+.logout-btn {
+    border: none;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    background: #333;
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* CONTENT */
+
+.dashboard-content {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+}
+
+
+/* TOP */
+
+.dashboard-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.dashboard-top h2 {
+    margin-bottom: 5px;
+}
+
+.dashboard-top p {
+    color: #999;
+}
+
+
+/* ADD PRODUCT */
+
+.add-product-btn {
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    background: #d9829a;
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* PRODUCTS */
+
+.admin-products {
+    display: grid;
+
+    gap: 15px;
+}
+
+.admin-product {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 15px;
+
+    border: 1px solid #eee;
+
+    border-radius: 12px;
+}
+
+.admin-product img {
+    width: 80px;
+    height: 80px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+.admin-product-info {
+    flex: 1;
+}
+
+.admin-product-info h3 {
+    margin-bottom: 5px;
+}
+
+.admin-product-info p {
+    color: #777;
+}
+
+.product-actions {
+    display: flex;
+
+    gap: 8px;
+}
+
+.product-actions button {
+    border: none;
+
+    padding: 8px 12px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.edit-btn {
+    background: #eee;
+}
+
+.delete-btn {
+    background: #f3b4b4;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .admin-page {
+        padding: 15px;
+    }
+
+    .admin-login {
+        padding: 30px 20px;
+    }
+
+    .dashboard-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .admin-product {
+        flex-wrap: wrap;
+    }
+
+    .product-actions {
+        width: 100%;
+    }
+
+    .product-actions button {
+        flex: 1;
+    }
+}
+
+/* =========================
+   PRODUCT FORM
+========================= */
+
+.product-form {
+    display: none;
+
+    margin-bottom: 30px;
+
+    padding: 25px;
+
+    border: 1px solid #eee;
+
+    border-radius: 12px;
+
+    background: #fdfafa;
+}
+
+.product-form h2 {
+    margin-bottom: 20px;
+}
+
+.product-form input,
+.product-form select {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    background: white;
+
+    font-family: inherit;
+}
+
+.form-buttons {
+    display: flex;
+
+    gap: 10px;
+}
+
+.form-buttons button {
+    padding: 11px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+#save-product-btn {
+    background: #d9829a;
+    color: white;
+}
+
+#cancel-product-btn {
+    background: #eee;
+    color: #333;
+}
+
+/* =========================
+   ADMIN PRODUCT CARDS
+========================= */
+
+.admin-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 25px;
+}
+
+.admin-product-card {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.admin-product-image {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    background: #f8f4f5;
+}
+
+.admin-product-info {
+    padding: 18px;
+}
+
+.admin-product-info h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.admin-product-info p {
+    margin: 6px 0;
+    color: #777;
+    font-size: 14px;
+}
+
+.admin-product-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.admin-product-actions button {
+    flex: 1;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.admin-product-actions button:hover {
+    opacity: 0.85;
+}
+
+.edit-product-btn {
+    background: #f3e1e6;
+    color: #a6536d;
+}
+
+.delete-product-btn {
+    background: #f5eeee;
+    color: #c04b4b;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .admin-products {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .admin-product-image {
+        height: 220px;
+    }
+
+}
+
+
+/* =========================
+   CHANGE PASSWORD
+========================= */
+
+.password-change-section {
+    width: 100%;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 28px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(32, 45, 72, 0.08);
+    border: 1px solid #f0e4e8;
+}
+
+.password-change-section h2 {
+    margin: 0 0 20px;
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-size: 26px;
+    color: #202d48;
+}
+
+#change-password-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+#change-password-form input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    border: 1px solid #ddd5da;
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    outline: none;
+    background: #fff;
+    color: #202d48;
+    transition: 0.2s ease;
+}
+
+#change-password-form input:focus {
+    border-color: #D9829A;
+    box-shadow: 0 0 0 3px rgba(217, 130, 154, 0.12);
+}
+
+#change-password-form button {
+    margin-top: 5px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #D9829A;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#change-password-form button:hover {
+    background: #c66f89;
+    transform: translateY(-1px);
+}
+
+#password-change-message {
+    margin: 5px 0 0;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    color: #83A77E;
+}
+
+/* =========================
+   LOGIN PASSWORD CHANGE
+========================= */
+
+.password-change-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 18px auto 0;
+    text-align: center;
+}
+
+.show-change-password-btn {
+    background: none;
+    border: none;
+    color: #9A8AB8;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.show-change-password-btn:hover {
+    color: #D9829A;
+    text-decoration: underline;
+}
+
+.password-change-section {
+    margin-top: 15px;
+    padding: 25px;
+    background: #ffffff;
+    border: 1px solid #f0e4e8;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(32, 45, 72, 0.08);
+}
+
+.password-change-section h2 {
+    margin: 0 0 20px;
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    color: #202d48;
+}
+
+#change-password-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#change-password-form input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 15px;
+    border: 1px solid #ddd5da;
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+    outline: none;
+}
+
+#change-password-form input:focus {
+    border-color: #D9829A;
+    box-shadow: 0 0 0 3px rgba(217, 130, 154, 0.12);
+}
+
+#change-password-form button {
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background: #D9829A;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#change-password-form button:hover {
+    background: #c66f89;
+}
+
+#password-change-message {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    margin: 5px 0 0;
+}

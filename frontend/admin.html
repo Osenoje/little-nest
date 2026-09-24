@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Little Nest - Admin</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <main class="admin-page">
+
+        <!-- LOGIN SCREEN -->
+        <section id="login-section" class="admin-login">
+
+            <h1>Little Nest</h1>
+            <p class="admin-subtitle">Admin Login</p>
+
+            <form id="admin-login-form">
+
+                <div class="input-group">
+                    <label for="admin-username">Username</label>
+
+                    <input
+                        type="text"
+                        id="admin-username"
+                        placeholder="Enter username"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="admin-password">Password</label>
+
+                    <input
+                        type="password"
+                        id="admin-password"
+                        placeholder="Enter password"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="login-btn">
+                    LOGIN
+                </button>
+
+                <p id="admin-login-message"></p>
+
+            </form>
+
+            <div class="password-change-container">
+
+                <button
+                    type="button"
+                    id="show-change-password-btn"
+                    class="show-change-password-btn"
+                    aria-expanded="false"
+                    aria-controls="password-change-section"
+                >
+                    Change Admin Password
+                </button>
+
+            </div>
+
+            <div id="password-change-section" class="password-change-section" hidden>
+
+                <h2>Change Admin Password</h2>
+
+                <form id="change-password-form">
+
+                    <input
+                        type="password"
+                        id="current-password"
+                        placeholder="Current password"
+                        required
+                    >
+
+                    <input
+                        type="password"
+                        id="new-password"
+                        placeholder="New password"
+                        required
+                    >
+
+                    <input
+                        type="password"
+                        id="confirm-password"
+                        placeholder="Confirm new password"
+                        required
+                    >
+
+                    <button type="submit">
+                        CHANGE PASSWORD
+                    </button>
+
+                    <p id="password-change-message"></p>
+
+                </form>
+
+            </div>
+
+            <a href="index.html" class="back-to-store">
+                ← Back to store
+            </a>
+
+        </section>
+
+
+        <!-- ADMIN DASHBOARD -->
+        <section id="dashboard-section" class="admin-dashboard">
+
+            <header class="dashboard-header">
+
+                <div>
+                    <h1>Little Nest</h1>
+                    <p>Admin Dashboard</p>
+                </div>
+
+                <button id="logout-btn" class="logout-btn">
+                    LOGOUT
+                </button>
+
+            </header>
+
+            
+
+            <div class="dashboard-content">
+
+                <div class="dashboard-top">
+
+                    <div>
+                        <h2>Products</h2>
+                        <p>Manage your store products</p>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="add-product-btn"
+                        class="add-product-btn"
+                    >
+                        + ADD PRODUCT
+                    </button>
+
+                </div>
+
+
+                <div id="product-form" class="product-form">
+
+                    <h2>Add New Product</h2>
+
+                    <input
+                        type="text"
+                        id="product-name"
+                        placeholder="Product name"
+                    >
+
+                    <input
+                        type="number"
+                        id="product-price"
+                        placeholder="Price (₦)"
+                        min="0"
+                    >
+
+                    <select id="product-category">
+                        <option value="">Select category</option>
+                        <option value="Newborn">Newborn</option>
+                        <option value="3-6 months">3-6 Months</option>
+                        <option value="6-12 months">6-12 Months</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Accessories">Accessories</option>
+                        <option value="Toys">Toys</option>
+                        <option value="Bundles">Bundles</option>
+                    </select>
+
+                    <input
+                        type="file"
+                        id="product-image"
+                        accept="image/*"
+                    >
+
+                    <div class="form-buttons">
+
+                        <button
+                            type="button"
+                            id="save-product-btn"
+                        >
+                            ADD PRODUCT
+                        </button>
+
+                        <button
+                            type="button"
+                            id="cancel-product-btn"
+                        >
+                            CANCEL
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div id="admin-products" class="admin-products">
+
+                    <!-- Products will appear here -->
+
+                </div>
+
+            </div>
+            
+            
+
+        </section>
+
+    </main>
+
+    <script src="admin.js"></script>
+
+</body>
+</html>
